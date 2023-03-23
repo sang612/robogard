@@ -2,7 +2,7 @@ import { CounterItem } from "../CounterItem";
 
 
 export const CounterSection = ({ itemList } :any) => {
-  console.log("itemList",itemList);
+  
   return (
     <section id="counter_area" className="py-[100px] bg-[#fafafa] ">
       <div className="xl:w-[1170px] px-[15px] mx-auto">
