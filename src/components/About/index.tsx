@@ -3,16 +3,22 @@ import Image from "next/image";
 export const AboutBanner = () => {
   return (
     <section className="relative py-[100px] px-0">
-      <div className="container mx-auto px-[15px">
+      <div className="container mx-auto px-[15px]">
         <div className="mx-[-15px]">
           <div className="md:w-1/5 pr-4 pl-4">
-            <div className="relative before:content-[''] before:absolute before:w-[400px] before:h-[400px] before:left-0 before:top-[-90px] before:bg-[url('/images/square.svg')] before:bg-['center_center'] before:bg-contain" />
+            <div className="relative before:hidden md:before:block before:content-[''] before:absolute before:w-[400px] before:h-[400px] before:left-0 before:top-[-90px] before:bg-[url('/images/square.svg')] before:bg-['center_center'] before:bg-contain" />
           </div>
           <div className="shadow-[0px_-1px_30px_#0000001a] mx-auto overflow-hidden block bg-[#253350] md:w-4/5 pr-4 pl-4">
             <div className="mx-[-15px] flex items-center">
               <div className="md:w-1/2 pr-4 pl-0 sm:w-full h-full">
-                <div className="relative h-[650px]">
-                  <Image src="images/about2.svg" alt="about-img" fill />
+                <div className="relative w-full h-full">
+                  <Image
+                    src="images/about2.svg"
+                    alt="about-img"
+                    width={360}
+                    height={160}
+                    style={{ height: "100%", width: "100%" }}
+                  />
                 </div>
               </div>
               <div className="md:w-1/2 pr-4 pl-4 sm:w-full no-pr">
@@ -33,7 +39,7 @@ export const AboutBanner = () => {
                         <img
                           src="images/elements/feature-1.svg"
                           className="mr-[16px] w-[30px] h-[30px] align-middle"
-                          alt
+                          alt="img"
                         />
                         <div className="font-[500] text-[#fff]">
                           Fully Responsive &amp; obile friendly
@@ -45,7 +51,7 @@ export const AboutBanner = () => {
                         <img
                           src="images/elements/feature-2.svg"
                           className="mr-[16px] w-[30px] h-[30px] align-middle"
-                          alt
+                          alt="img"
                         />
                         <div className="font-[500] text-[#fff]">
                           Clean &amp; Modern Design Layout
@@ -57,7 +63,7 @@ export const AboutBanner = () => {
                         <img
                           src="images/elements/feature-3.svg"
                           className="mr-[16px] w-[30px] h-[30px] align-middle"
-                          alt
+                          alt="img"
                         />
                         <div className="font-[500] text-[#fff]">
                           Multi-Device Testing System{" "}
@@ -69,7 +75,7 @@ export const AboutBanner = () => {
                         <img
                           src="images/elements/feature-4.svg"
                           className="mr-[16px] w-[30px] h-[30px] align-middle"
-                          alt
+                          alt="img"
                         />
                         <div className="font-[500] text-[#fff]">
                           great User Experience
