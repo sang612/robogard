@@ -1,14 +1,7 @@
+import { CounterItemType } from "@/type";
 import Image from "next/image";
-import { Children } from "react";
 
-interface CounterItem {
-  index: number;
-  icon: string;
-  number: number;
-  text: string;
-}
-
-export const CounterItem = ({ index, icon, number, text }: CounterItem) => {
+export const CounterItem = ({ index, icon, number, text }: CounterItemType) => {
   return (
     <div className="relative py-[10px] border-b-[1px] border-solid border-b-[#eee] transition-all duration-[0.3s] ease-in-out">
       <span

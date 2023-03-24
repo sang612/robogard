@@ -18,18 +18,11 @@ export const Banner = ({ className, title, title2, desc }) => {
                     {title}
                   </span>
                   <h1 className="cd-headline clip">
-                    <span className="font-[500] block py-[0.2em] text-[#fff] text-[52px] leading-[50px]">
+                    <span className="font-[500] block py-[0.2em] text-[#000] text-[52px] leading-[50px]">
                       {title2}
                     </span>
-                    {/* <span className="cd-words-wrapper text-[#00ffff] text-[52px]">
-                    <b className="is-visible font-[800]">
-                      Ai Digital Marketing
-                    </b>
-                    <b className="font-[800]">Ai Chatbot Business</b>
-                    <b className="font-[800]">Machine Learning</b>
-                  </span> */}
                   </h1>
-                  <p className="text-[18px] leading-[1.7] text-[#dbe3e3]">
+                  <p className="text-[18px] leading-[1.7] text-[#000]">
                     {desc}
                   </p>
                   <div className=" h-[66px]">

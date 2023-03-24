@@ -1,12 +1,13 @@
+import { CounterItemType, CounterProps } from "@/type";
 import { CounterItem } from "../CounterItem";
 
 
-export const CounterSection = ({ itemList } :any) => {
+export const CounterSection = ({ itemList } :CounterProps) => {
   
   return (
     <section id="counter_area" className="py-[100px] bg-[#fafafa] ">
       <div className="xl:w-[1170px] px-[15px] mx-auto">
-        <div className="mx-[-15px] text-left flex">
+        <div className="mx-[-15px] text-left flex flex-wrap">
           <div className="md:w-3/5 pr-4 pl-4">
             <div className="content_area">
               <h5 className="relative pl-[90px] text-[#00ccff] text-[18px] before:content-[''] before:absolute before:w-[80px] before:h-[2px] before:left-0 before:top-1/2 before:-translate-y-1/2 before:bg-[#00ccff] font-[500]">
@@ -63,7 +64,7 @@ export const CounterSection = ({ itemList } :any) => {
                 consectetur adipiscing elit. Integer tellus est, finibus ut cit
                 amet, consectetur adip
               </p>
-              {itemList.map((item : any) => (
+              {itemList.map((item : CounterItemType) => (
                 <CounterItem
                   key={item.index}
                   index={item.index}
@@ -75,9 +76,7 @@ export const CounterSection = ({ itemList } :any) => {
             </div>
           </div>
         </div>
-        {/*- END ROW */}
       </div>
-      {/*- END CONTAINER */}
     </section>
   );
 };
