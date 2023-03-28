@@ -13,6 +13,8 @@ import { WhatClientsSaying } from "@/components/WhatClientsSaying";
 import { Blogs } from "@/components/Blogs";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { Solutions } from "@/components/Solutions";
 
 config.autoAddCss = false;
 const itemList = [
@@ -46,19 +48,22 @@ const listSmallSectionItem = [
     id: 1,
     title: "Create Account",
     desc: "Lorem ipsum dolor sit amet, adipiscing elit. Integer tellus estt congue sed dolor sit amet, adipis dolor sit amet.",
-    iconUrl: "/images/elements/step1.svg",
+    iconUrl: "/images/demo5/demo5-step1.svg",
+    borderBColor: "border-b-[#68A0E9]",
   },
   {
     id: 2,
     title: "Create Account",
     desc: "Lorem ipsum dolor sit amet, adipiscing elit. Integer tellus estt congue sed dolor sit amet, adipis dolor sit amet.",
-    iconUrl: "/images/elements/step2.svg",
+    iconUrl: "/images/demo5/demo5-step2.svg",
+    borderBColor: "border-b-[#68A0E9]",
   },
   {
     id: 3,
     title: "Create Account",
     desc: "Lorem ipsum dolor sit amet, adipiscing elit. Integer tellus estt congue sed dolor sit amet, adipis dolor sit amet.",
-    iconUrl: "/images/elements/step3.svg",
+    iconUrl: "/images/demo5/demo5-step3.svg",
+    borderBColor: "border-b-[#68A0E9]",
   },
 ];
 const listOurMainServices = [
@@ -68,6 +73,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv1.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
   },
   {
     title: "Business Consulting",
@@ -75,6 +81,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv2.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
   },
   {
     title: "AI-Based Investments",
@@ -82,6 +89,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv3.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
   },
   {
     title: "System Automation",
@@ -89,6 +97,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv4.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
   },
   {
     title: "Targeted AI Merketing",
@@ -96,6 +105,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv5.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
   },
   {
     title: "Mobile Security",
@@ -103,29 +113,71 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv6.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassname: "border-[#68A0E9] text-[#68A0E9]",
   },
 ];
 const listBlogItem = [
   {
     id: 1,
-    title: "Beautiful Working Idea.",
+    title: "Drive Traffic to Website",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat",
-    imageUrl: "images/blog/1.svg",
+    imageUrl: "images/demo4/demo-4-blog-1.svg",
     type: "Lifestyle",
+    textColor: "text-[#68A0E9]",
+    iconColor: "#68A0E9",
+    buttonClassName: "text-[#68A0E9] border-[#68A0E9]",
   },
   {
     id: 2,
     title: "Drive Traffic to Website",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat",
-    imageUrl: "images/blog/2.svg",
+    imageUrl: "images/demo4/demo-4-blog-2.svg",
     type: "Lifestyle",
+    textColor: "text-[#68A0E9]",
+    iconColor: "#68A0E9",
+    buttonClassName: "text-[#68A0E9] border-[#68A0E9]",
   },
   {
     id: 3,
-    title: "Latest Business strategies",
+    title: "Drive Traffic to Website",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat",
-    imageUrl: "images/blog/3.svg",
+    imageUrl: "images/demo4/demo-4-blog-3.svg",
     type: "Lifestyle",
+    textColor: "text-[#68A0E9]",
+    iconColor: "#68A0E9",
+    buttonClassName: "text-[#68A0E9] border-[#68A0E9]",
+  },
+];
+const listSolution = [
+  {
+    id: 1,
+    text: "Fully Reponsive",
+    imgSrc: "/images/demo4/demo-4-solution-item-1.svg",
+    className: "border-b-[#000]",
+  },
+  {
+    id: 2,
+    text: "Awards Win",
+    imgSrc: "/images/demo4/demo-4-solution-item-2.svg",
+    className: "border-b-[#000]",
+  },
+  {
+    id: 3,
+    text: "24/7 Support",
+    imgSrc: "/images/demo4/demo-4-solution-item-3.svg",
+    className: "border-b-[#000]",
+  },
+  {
+    id: 4,
+    text: "Happy Clients",
+    imgSrc: "/images/demo4/demo-4-solution-item-1.svg",
+    className: "border-b-[#000]",
+  },
+  {
+    id: 5,
+    text: "Fully Responsive",
+    imgSrc: "/images/demo4/demo-4-solution-item-4.svg",
+    className: "border-b-[#000]",
   },
 ];
 
@@ -135,100 +187,72 @@ export default function Home() {
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
         <Navbar />
         <Banner
-          className={`bg-[url('/images/header-bg/header-4.svg')]`}
-          title="Get Ready! AI Soluation to Improve Business Growth"
-          title2="AI Solutions to more Business profit in"
+          className={`bg-[url('/images/demo5/demo5-header-bg.svg')]`}
+          title="Automated Chatbot to grow Business!"
+          title2="Get Closer look how Business Develop in"
           desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut culpa nulla ipsum amet a ab neque. Odio impedit inventore nemo aliquid eius ad? Veniam perferendis iste odio officiis."
+          titleColor="text-[#000]"
+          title2Color="text-[#666666]"
+          descColor="text-[#666666]"
+          hasBefore
+          beforeColor="before:bg-[#000]"
+          buttonClassName="text-[#fff] bg-[#68A0E9]"
         />
-        <CounterSection itemList={itemList} />
-        <AboutBanner />
-        <section className="pb-[70px]" id="demo">
+        <section className="py-[144px]" id="demo">
           <div className="container mx-auto px-[15px] xl:w-[1170px]">
             <HeadTitle
               title="HLS Business Solutions"
               desc=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               molestie, justo nec convallis sollicitudin."
             />
-            <div className="flex flex-wrap items-center justify-center text-center mx-auto">
-              <div className="md:w-[16.66666667%] px-[15px] sm:w-1/3 ">
-                <div className="p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid border-b-[#1fe482] text-center">
-                  <img
-                    src="images/elements/feat1.png"
-                    alt="img"
-                    className="mx-auto max-w-full h-auto align-middle"
-                  />
-                  <p className="mt-[15px] ">Fully Responsive.</p>
-                </div>
-              </div>
-              <div className="md:w-[16.66666667%] px-[15px] sm:w-1/3 ">
-                <div className="p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid border-b-[#1fe482] text-center">
-                  <img
-                    src="images/elements/feat2.png"
-                    alt="img"
-                    className="mx-auto max-w-full h-auto align-middle"
-                  />
-                  <p className="mt-[15px] ">HLS Team.</p>
-                </div>
-              </div>
-              <div className="md:w-[16.66666667%] px-[15px] sm:w-1/3 ">
-                <div className="p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid border-b-[#1fe482] text-center">
-                  <img
-                    src="images/elements/feat3.png"
-                    alt="img"
-                    className="mx-auto max-w-full h-auto align-middle"
-                  />
-                  <p className="mt-[15px] ">Awards Win.</p>
-                </div>
-              </div>
-              <div className="md:w-[16.66666667%] px-[15px] sm:w-1/3 ">
-                <div className="p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid border-b-[#1fe482] text-center">
-                  <img
-                    src="images/elements/feat4.png"
-                    alt="img"
-                    className="mx-auto max-w-full h-auto align-middle"
-                  />
-                  <p className="mt-[15px] ">24/7 Support.</p>
-                </div>
-              </div>
-              <div className="md:w-[16.66666667%] px-[15px] sm:w-1/3 ">
-                <div className="p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid border-b-[#1fe482] text-center">
-                  <img
-                    src="images/elements/feat5.png"
-                    alt="img"
-                    className="mx-auto max-w-full h-auto align-middle"
-                  />
-                  <p className="mt-[15px] ">Happy Clients.</p>
-                </div>
-              </div>
-              <div className="md:w-[16.66666667%] px-[15px] sm:w-1/3 ">
-                <div className="p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid border-b-[#1fe482] text-center">
-                  <img
-                    src="images/elements/feat6.png"
-                    alt="img"
-                    className="mx-auto max-w-full h-auto align-middle"
-                  />
-                  <p className="mt-[15px] ">Fully Responsive.</p>
-                </div>
-              </div>
-            </div>
+            <Solutions listSolution={listSolution} />
           </div>
         </section>
-
-        <section className="relative pb-[70px] pt-[100px] before:content-[''] before:left-0 before:top-0 before:absolute before:w-full before:h-[70%] before:bg-[url(/images/header-bg/sec-bg.svg)] before:bg-no-repeat before:bg-[bottom_center]">
+        <AboutBanner
+          imageUrl="images/demo5/demo5-about.svg"
+          titleColor="text-[#68A0E9]"
+          beforeColor="before:bg-[#68A0E9]"
+          title2Color="text-[#000]"
+          descColor="text-[#666666]"
+          itemColor="text-[#666666]"
+          bgColor="bg-[#F5F5F5]"
+          firstColor="#AAC9F1"
+          secondColor="#68A0E9"
+          textButtonColor="text-[#000]"
+          borderButtonColor="border-[#fff]"
+          buttonClassName="bg-[#fff]"
+          squareClassName="before:bg-[url('/images/demo3/square-grey.svg')]"
+        />
+        <section className="relative pb-[70px] pt-[100px] before:content-[''] before:left-0 before:top-0 before:absolute before:w-full before:h-[70%] before:bg-[url(/images/demo5/demo5-how-it-works-bg.svg)] before:bg-no-repeat before:bg-[bottom_center]">
           <div className="relative mx-auto xl:w-[1170px]">
             <HeadTitle
-              title="HLS Business Solutions"
+              title="How It Works"
               desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie, justo nec convallis sollicitudin."
-              titleColor="text-[#fff]"
-              descColor="text-[#fff]"
-              separateColor="after:bg-[#00B0FE]"
+              titleColor="text-[#000]"
+              descColor="text-[#000]"
+              separateColor="after:bg-[#FFC90B]"
             />
             <SmallSection listSmallSectionItem={listSmallSectionItem} />
           </div>
         </section>
-        <AboutUs />
-
-        <section className="relative pb-[70px] pt-[100px] bg-[url(/images/header-bg/serv-bg.svg)] bg-cover">
+        <AboutUs
+          imageSrc="images/demo5/demo5-about-us.svg"
+          beforeColor="before:bg-[#68A0E9]"
+          titleColor="text-[#68A0E9]"
+          aboutUsClassName="bg-[#68A0E9]"
+          buttonClassName="text-[#68A0E9] border-[#68A0E9]"
+        />
+        <WhyChooseUs
+          bgImg="bg-[url('/images/demo5/demo5-why-choose-us.svg')]"
+          titleColor="text-[#00B0FE]"
+          bgClassName=""
+        />
+        <CounterSection
+          itemList={itemList}
+          beforeColor="before:bg-[#00B0FE]"
+          titleColor="text-[#00B0FE]"
+        />
+        <section className="relative pb-[70px] pt-[100px] bg-[url(/images/demo5/demo5-our-main-services.svg)] bg-cover">
           <div className="relative mx-auto xl:w-[1170px]">
             <HeadTitle
               title="Our Main Services"
@@ -237,13 +261,28 @@ export default function Home() {
               descColor="text-[#fff]"
               separateColor="after:bg-[#00B0FE]"
             />
-            <OutMainServicesSlider listOurMainServices={listOurMainServices} />
+            <OutMainServicesSlider
+              listOurMainServices={listOurMainServices}
+              dotSliderColor="bg-[#00B0FE]"
+            />
           </div>
         </section>
-        <WhatClientsSaying />
+        <WhatClientsSaying dotSliderColor="bg-[#68A0E9]" />
         <Blogs listBlogItem={listBlogItem} />
-        <ContactForm />
-        <Footer />
+        <ContactForm
+          imgSrc="/images/demo5/demo5-contact-form.svg"
+          squareClassName="before:bg-[url('/images/demo3/square-grey.svg')]"
+          titleColor="text-[#68A0E9]"
+          inputClassName="bg-[#F2FBFF]"
+          textareaClassName="bg-[#F2FBFF]"
+          buttonClassName="border-[#68A0E9] text-[#68A0E9]"
+        />
+        <Footer
+          className="bg-[url('/images/demo5/demo-5-footer-bg.svg')]"
+          linkClassName="after:bg-[#68A0E9] text-[#000]"
+          socialItemClassName="text-[#68A0E9] border-[#68A0E9] hover:text-[#68A0E9]"
+          coppyRightClassName= 'text-[#000]'
+        />
       </main>
     </>
   );

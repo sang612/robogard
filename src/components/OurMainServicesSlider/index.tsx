@@ -7,12 +7,13 @@ import { useState } from "react";
 
 export const OutMainServicesSlider = ({
   listOurMainServices,
+  dotSliderColor = "bg-[#1fe482]",
 }: OurMainServicesProps) => {
   const customPaging = (index: number) => {
     return (
       <div
         className={`w-[10px] h-[10px] mx-1 rounded-full ${
-          index === activeIndex ? "bg-[#1fe482]" : "bg-gray-300"
+          index === activeIndex ? dotSliderColor : "bg-gray-300"
         }`}
       ></div>
     );
@@ -49,6 +50,7 @@ export const OutMainServicesSlider = ({
           iconUrl={item.iconUrl}
           buttonText={item.buttonText}
           className={item.className}
+          buttonClassName={item.buttonClassName}
         />
       ))}
     </Slider>

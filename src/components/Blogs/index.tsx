@@ -20,6 +20,9 @@ export const Blogs = ({ listBlogItem }: BlogProps) => {
                   title={item.title}
                   type={item.type}
                   key={item.id}
+                  textColor={item.textColor}
+                  iconColor={item.iconColor}
+                  buttonClassName={item.buttonClassName}
                 />
               );
             })}
