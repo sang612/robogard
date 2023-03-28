@@ -7,12 +7,13 @@ import { WhatClientsSayingItemType, WhatClientsSayingProps } from "@/type";
 
 export const WhatClientsSayingSlider = ({
   listWhatClientsSaying,
+  dotSliderColor = "bg-[#1fe482]",
 }: WhatClientsSayingProps) => {
   const customPaging = (index: number) => {
     return (
       <div
         className={`w-[10px] h-[10px] mx-1 rounded-full mt-6 ${
-          index === activeIndex ? "bg-[#1fe482]" : "bg-gray-300"
+          index === activeIndex ? dotSliderColor : "bg-gray-300"
         }`}
       ></div>
     );

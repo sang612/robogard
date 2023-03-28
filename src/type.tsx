@@ -5,6 +5,8 @@ export interface SmallSectionItemType {
   buttonText?: string;
   className?: string;
   id?: number;
+  borderBColor?: string;
+  buttonClassName?: string;
 }
 
 export interface SmallSectionProps {
@@ -12,6 +14,7 @@ export interface SmallSectionProps {
 }
 export interface OurMainServicesProps {
   listOurMainServices: SmallSectionItemType[];
+  dotSliderColor?: string;
 }
 
 export interface WhatClientsSayingItemType {
@@ -23,6 +26,7 @@ export interface WhatClientsSayingItemType {
 }
 export interface WhatClientsSayingProps {
   listWhatClientsSaying: WhatClientsSayingItemType[];
+  dotSliderColor?: string;
 }
 
 export interface BlogItemType {
@@ -31,6 +35,9 @@ export interface BlogItemType {
   imageUrl: string;
   type: string;
   id?: number;
+  textColor?: string;
+  iconColor?: string;
+  buttonClassName?: string;
 }
 export interface BlogProps {
   listBlogItem: BlogItemType[];
@@ -44,4 +51,31 @@ export interface CounterItemType {
 }
 export interface CounterProps {
   itemList: CounterItemType[];
+  titleColor?: string;
+  beforeColor?: string;
+}
+
+export interface BannerProp {
+  className: string;
+  title: string;
+  title2: string;
+  desc: string;
+  titleColor?: string;
+  title2Color?: string;
+  descColor?: string;
+  hasBefore?: boolean;
+  beforeColor?: string;
+  buttonClassName?: string;
+  animationTextColor?: string;
+}
+
+export interface SolutionItemType {
+  text?: string;
+  imgSrc: string;
+  className?: string;
+  id?: number;
+}
+
+export interface SolutionProp {
+  listSolution: SolutionItemType[];
 }

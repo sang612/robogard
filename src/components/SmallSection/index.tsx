@@ -1,4 +1,4 @@
-import {  SmallSectionItemType, SmallSectionProps } from "@/type";
+import { SmallSectionItemType, SmallSectionProps } from "@/type";
 import { SmallSectionItem } from "./SmallSectionItem";
 
 export const SmallSection = ({ listSmallSectionItem }: SmallSectionProps) => {
@@ -11,6 +11,7 @@ export const SmallSection = ({ listSmallSectionItem }: SmallSectionProps) => {
           iconUrl={item.iconUrl}
           buttonText={item.buttonText}
           key={item.id}
+          borderBColor={item.borderBColor}
         />
       ))}
     </div>

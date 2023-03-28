@@ -36,7 +36,7 @@ const listWhatClientsSaying = [
   },
 ];
 
-export const WhatClientsSaying = () => {
+export const WhatClientsSaying = ({ dotSliderColor = "bg-[#1fe482]" }) => {
   return (
     <section
       id="testimonial_area"
@@ -50,6 +50,7 @@ export const WhatClientsSaying = () => {
         />
         <WhatClientsSayingSlider
           listWhatClientsSaying={listWhatClientsSaying}
+          dotSliderColor={dotSliderColor}
         />
       </div>
     </section>

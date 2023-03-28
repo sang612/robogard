@@ -151,7 +151,7 @@ export default function Home() {
         </section>
 
         <section className="pt-[100px] pb-[70px] " id="demo">
-          <div className="container mx-auto px-[15px">
+          <div className="container mx-auto px-[15px]">
             <div className="section_heading pb-[100px] text-center after:absolute after:content-[''] after:blocl after:h-[30px] after:w-[3px] after:left-[50%] after:bg-[#000] after:-translate-x-1/2">
               <h2 className="text-[40px] font-[600] text-[#000] mb-[10px]">
                 HLS Demos
