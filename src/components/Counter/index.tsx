@@ -16,7 +16,6 @@ export const CounterSection = ({
     );
 
     const checkAnimatedClass = setInterval(() => {
-      console.log("run");
       if (
         wowAnimationsTrigger &&
         wowAnimationsTrigger.classList.contains("animated")
