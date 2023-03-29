@@ -28,7 +28,7 @@ export const WhyChooseUs = ({
                     Core Features:
                   </h3>
                   <div
-                    className="bg-[#fff] relative shadow-[0_-1px_30px_rgba(0,0,0,0.1)] block py-[30px] px-[30px] mb-[30px]"
+                    className="hover:after:w-full wow fadeInLeft bg-[#fff] relative shadow-[0_-1px_30px_rgba(0,0,0,0.1)] block py-[30px] px-[30px] mb-[30px]"
                     data-wow-delay="0.2s"
                     style={{
                       visibility: "visible",
@@ -57,7 +57,7 @@ export const WhyChooseUs = ({
                 </div>
                 <div className="md:w-full pr-4 pl-4">
                   <div
-                    className="bg-[#fff] relative shadow-[0_-1px_30px_rgba(0,0,0,0.1)] block py-[30px] px-[30px] mb-[30px]"
+                    className="hover:after:w-full wow fadeInLeft bg-[#fff] relative shadow-[0_-1px_30px_rgba(0,0,0,0.1)] block py-[30px] px-[30px] mb-[30px]"
                     data-wow-delay="0.4s"
                     style={{
                       visibility: "visible",
@@ -86,7 +86,7 @@ export const WhyChooseUs = ({
                 </div>
                 <div className="md:w-full pr-4 pl-4">
                   <div
-                    className="bg-[#fff] relative shadow-[0_-1px_30px_rgba(0,0,0,0.1)] block py-[30px] px-[30px] mb-[30px]"
+                    className="hover:after:w-full wow fadeInLeft bg-[#fff] relative shadow-[0_-1px_30px_rgba(0,0,0,0.1)] block py-[30px] px-[30px] mb-[30px]"
                     data-wow-delay="0.6s"
                     style={{
                       visibility: "visible",

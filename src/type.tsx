@@ -48,6 +48,7 @@ export interface CounterItemType {
   icon: string;
   number: number;
   text: string;
+  isWowAnimationCompleted?: boolean
 }
 export interface CounterProps {
   itemList: CounterItemType[];

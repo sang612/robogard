@@ -2,7 +2,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
-export const Navbar = () => {
+export const Navbar = ({activeId}) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [colorChange, setColorchange] = useState(false);
   useEffect(() => {
@@ -48,58 +48,58 @@ export const Navbar = () => {
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff]  px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'home' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#home"
               >
-                <span className="ml-2">Home</span>
+                <span className="mx-2">Home</span>
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'about' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#about"
               >
-                <span className="ml-2">About</span>
+                <span className="mx-2">About</span>
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'service' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#service"
               >
-                <span className="ml-2">Service</span>
+                <span className="mx-2">Service</span>
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'work' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#work"
               >
-                <span className="ml-2">Work</span>
+                <span className="mx-2">Work</span>
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'resume' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#resume"
               >
-                <span className="ml-2">Resume</span>
+                <span className="mx-2">Resume</span>
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'blog' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#blog"
               >
-                <span className="ml-2">Blog</span>
+                <span className="mx-2">Blog</span>
               </a>
             </li>
             <li className="nav-item">
               <a
-                className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                href="#pablo"
+                className={`${activeId === 'contact' ? 'before:opacity-100 before:translate-x-0 before:translate-y-0 after:opacity-100 after:translate-x-0' : 'before:translate-x-[20px] after:translate-x-[-20px] '} before:opacity-0 hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#fff] after:text-[#fff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75`}
+                href="#contact"
               >
-                <span className="ml-2">Contact</span>
+                <span className="mx-2">Contact</span>
               </a>
             </li>
           </ul>
