@@ -13,6 +13,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faAnglesDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { Banner } from "@/components/Banner";
+import Link from "next/link";
+import { Footer } from "@/components/Footer";
 
 config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
@@ -90,67 +93,19 @@ export default function Home() {
           </div>
         </nav>
 
-        <section
-          id="home"
-          className="relative py-[110px] bg-cover bg-no-repeat h-fit bg-[url('/images/header-bg/demo-bg.png')]"
-        >
-          <div className="table w-full h-full">
-            <div className="table-cell align-middle">
-              <div className="container mx-auto px-[15px]">
-                <div className="row">
-                  <div className="md:w-1/2 pr-4 pl-4">
-                    <div className="banner_content text-left mt-30">
-                      <span className="text-[#00ffff] text-[18px] font-bold">
-                        HLS AI Startup & Chabot Template
-                      </span>
-                      <h1 className="cd-headline clip">
-                        {/* <span className="font-[500] block py-[0.2em] text-[#fff] text-[52px]">
-                          Best AI Template for
-                        </span>
-                        <span className="cd-words-wrapper text-[#00ffff] text-[52px]">
-                          <b className="is-visible font-[800]">
-                            Ai Digital Marketing
-                          </b>
-                          <b className="font-[800]">Ai Chatbot Business</b>
-                          <b className="font-[800]">Machine Learning</b>
-                        </span> */}
-                      </h1>
-                      <p className="text-[18px] leading-[1.7] text-[#dbe3e3]">
-                        Standalone template for all your future-ready AI
-                        startups. It includes areas like Chabots, Rpbotics
-                        Industry, AI for Marketing incorporates inner pages like
-                        pricing, blog, contact, about us and more.....
-                      </p>
-                      <div className=" mt-[60px] h-[66px]">
-                        <a
-                          href="#0"
-                          className="block md:inline max-w-[167px] text-[#fff] text-[14px]  mt-[30px] border-[1px] border-solid border-[#00ffff] capitalize py-[23px] px-[40px] tracking-[0.6px] font-[600] rounded-[0] mr-[10px] min-w-[175px] bg-[url('/images/elements/button-after.png')] bg-center bg-right-bottom leading-[10px] transition-all duration-[0.3] ease-in-out relative"
-                        >
-                          <span>View Demos</span>
-                        </a>
-                        <a
-                          href="#0"
-                          className="block md:inline max-w-[167px] text-[#fff] text-[14px]  mt-[30px] border-[1px] border-solid border-[#00ffff] capitalize py-[23px] px-[40px] tracking-[0.6px] font-[600] rounded-[0] mr-[10px] min-w-[175px] bg-[url('/images/elements/button-after.png')] bg-center bg-right-bottom leading-[10px] transition-all duration-[0.3] ease-in-out relative"
-                        >
-                          <span>Purchase Now</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mouse_scroll ">
-            <a href="#about" className="smoothScroll">
-              <div className="mouse mx-auto w-[22px] h-[42px] mt-[-40px] animate-finger text-[30px] font-[300] text-[#00ffff]">
-                <FontAwesomeIcon icon={faAnglesDown} />
-              </div>
-            </a>
-          </div>
-        </section>
+        <Banner
+          className={`bg-[url('/images/index-header-bg.svg')]`}
+          title="HLS AI Startup & Chabot Template"
+          title2="Best AI Template for"
+          desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut culpa nulla ipsum amet a ab neque. Odio impedit inventore nemo aliquid eius ad? Veniam perferendis iste odio officiis."
+          titleColor="text-[#00FFFF]"
+          title2Color="text-[#fff]"
+          descColor="text-[#fff]"
+          buttonClassName="text-[#000] bg-[#fff]"
+          animationTextColor="text-[#00FFFF]"
+        />
 
-        <section className="pt-[100px] pb-[70px] " id="demo">
+        <section className="pt-[100px] pb-[70px] " id="about">
           <div className="container mx-auto px-[15px]">
             <div className="section_heading pb-[100px] text-center after:absolute after:content-[''] after:blocl after:h-[30px] after:w-[3px] after:left-[50%] after:bg-[#000] after:-translate-x-1/2">
               <h2 className="text-[40px] font-[600] text-[#000] mb-[10px]">
@@ -163,146 +118,68 @@ export default function Home() {
             </div>
             <div className="row text-center flex flex-wrap">
               <div className="lg:w-1/3 pr-4 pl-4 md:w-1/2 w-full">
-                <a href="index-1.html" target="_blank" className="w-full">
+                <Link href="/demo1" target="_blank" className="w-full">
                   <div className="demo-item w-full hover:shadow-[0_-1px_30px_rgba(0,0,0,0.1)]">
                     <div className="demo-img relative w-full h-[597px]">
-                      <Image fill src="/images/demos/index-1.png" alt="s" />
+                      <Image fill src="/images/demos/index-1.svg" alt="s" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="lg:w-1/3 pr-4 pl-4 md:w-1/2 w-full">
-                <a href="index-1.html" target="_blank" className="w-full">
+                <Link href="/demo2" target="_blank" className="w-full">
                   <div className="demo-item w-full hover:shadow-[0_-1px_30px_rgba(0,0,0,0.1)]">
                     <div className="demo-img relative w-full h-[597px]">
-                      <Image fill src="/images/demos/index-2.png" alt="s" />
+                      <Image fill src="/images/demos/index-2.svg" alt="s" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="lg:w-1/3 pr-4 pl-4 md:w-1/2 w-full">
-                <a href="index-1.html" target="_blank" className="w-full">
+                <Link href="/demo3" target="_blank" className="w-full">
                   <div className="demo-item w-full hover:shadow-[0_-1px_30px_rgba(0,0,0,0.1)]">
                     <div className="demo-img relative w-full h-[597px]">
-                      <Image fill src="/images/demos/index-3.png" alt="s" />
+                      <Image fill src="/images/demos/index-3.svg" alt="s" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="lg:w-1/3 pr-4 pl-4 md:w-1/2 w-full mt-[32px]">
-                <a href="index-1.html" target="_blank" className="w-full">
+                <Link href="/demo4" target="_blank" className="w-full">
                   <div className="demo-item w-full hover:shadow-[0_-1px_30px_rgba(0,0,0,0.1)]">
                     <div className="demo-img relative w-full h-[597px]">
-                      <Image fill src="/images/demos/index-4.png" alt="s" />
+                      <Image fill src="/images/demos/index-4.svg" alt="s" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="lg:w-1/3 pr-4 pl-4 md:w-1/2 w-full mt-[32px]">
-                <a href="index-1.html" target="_blank" className="w-full">
+                <Link href="/demo5" target="_blank" className="w-full">
                   <div className="demo-item w-full hover:shadow-[0_-1px_30px_rgba(0,0,0,0.1)]">
                     <div className="demo-img relative w-full h-[597px]">
-                      <Image fill src="/images/demos/index-5.png" alt="s" />
+                      <Image fill src="/images/demos/index-5.svg" alt="s" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="lg:w-1/3 pr-4 pl-4 md:w-1/2 w-full mt-[32px]">
-                <a href="index-1.html" target="_blank" className="w-full">
+                <Link href="/demo6" target="_blank" className="w-full">
                   <div className="demo-item w-full hover:shadow-[0_-1px_30px_rgba(0,0,0,0.1)]">
                     <div className="demo-img relative w-full h-[597px]">
-                      <Image fill src="/images/demos/index-6.png" alt="s" />
+                      <Image fill src="/images/demos/index-6.svg" alt="s" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </section>
-
-        <footer className="p-[70px] relative bg-cover bg-[url('/images/footer-bg.png')]">
-          <div className="container mx-auto px-[15px">
-            <div className="row text-center">
-              <div className="col-md-8 col-md-offset-2 col-xs-12">
-                <div className="sub_title">
-                  <a href="#">
-                    <span className="relative font-[400] text-[#dbe3e3] uppercase text-[14px] mx-[10px] after:absolute after:content-[''] after:top-[10px] after:bottom-0 after:right-[-12px] after:w-[4px] after:h-[4px] after:bg-[#00FFFF] after:rounded-full">
-                      Home
-                    </span>{" "}
-                  </a>
-                  <a href="#">
-                    <span className="relative font-[400] text-[#dbe3e3] uppercase text-[14px] mx-[10px] after:absolute after:content-[''] after:top-[10px] after:bottom-0 after:right-[-12px] after:w-[4px] after:h-[4px] after:bg-[#00FFFF] after:rounded-full">
-                      About Us
-                    </span>
-                  </a>
-                  <a href="#">
-                    <span className="relative font-[400] text-[#dbe3e3] uppercase text-[14px] mx-[10px] after:absolute after:content-[''] after:top-[10px] after:bottom-0 after:right-[-12px] after:w-[4px] after:h-[4px] after:bg-[#00FFFF] after:rounded-full">
-                      Technology
-                    </span>{" "}
-                  </a>
-                  <a href="#">
-                    <span className="relative font-[400] text-[#dbe3e3] uppercase text-[14px] mx-[10px] after:absolute after:content-[''] after:top-[10px] after:bottom-0 after:right-[-12px] after:w-[4px] after:h-[4px] after:bg-[#00FFFF] after:rounded-full">
-                      Products
-                    </span>{" "}
-                  </a>
-                  <a href="#">
-                    <span className="relative font-[400] text-[#dbe3e3] uppercase text-[14px] mx-[10px] after:absolute after:content-[''] after:top-[10px] after:bottom-0 after:right-[-12px] after:w-[4px] after:h-[4px] after:bg-[#00FFFF] after:rounded-full">
-                      Services
-                    </span>{" "}
-                  </a>
-                </div>
-                <ul className="my-[35px] list-none">
-                  <li className="inline-block mx-[5px] ">
-                    <a
-                      href="#00"
-                      className="relative block w-[45px] h-[45px] text-[#dbe3e3] text-[22px] leading-[45px] rounded-full border-[1px] border-solid border-[#1fe482] no-underline duration-[0.3s] hover:text-[#1fe482] before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[#fff] before:rounded-full before:scale-0 before:duration-[0.3s] before:z-[-1] hover:before:scale-100 z-0"
-                    >
-                      <FontAwesomeIcon icon={faFacebookF} />
-                    </a>
-                  </li>
-                  <li className="inline-block mx-[5px] ">
-                    <a
-                      href="#00"
-                      className="relative block w-[45px] h-[45px] text-[#dbe3e3] text-[22px] leading-[45px] rounded-full border-[1px] border-solid border-[#1fe482] no-underline duration-[0.3s] hover:text-[#1fe482] before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[#fff] before:rounded-full before:scale-0 before:duration-[0.3s] before:z-[-1] hover:before:scale-100 z-0"
-                    >
-                      <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                  </li>
-                  <li className="inline-block mx-[5px] ">
-                    <a
-                      href="#00"
-                      className="relative block w-[45px] h-[45px] text-[#dbe3e3] text-[22px] leading-[45px] rounded-full border-[1px] border-solid border-[#1fe482] no-underline duration-[0.3s] hover:text-[#1fe482] before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[#fff] before:rounded-full before:scale-0 before:duration-[0.3s] before:z-[-1] hover:before:scale-100 z-0"
-                    >
-                      <FontAwesomeIcon icon={faLinkedinIn} />
-                    </a>
-                  </li>
-                  <li className="inline-block mx-[5px] ">
-                    <a
-                      href="#00"
-                      className="relative block w-[45px] h-[45px] text-[#dbe3e3] text-[22px] leading-[45px] rounded-full border-[1px] border-solid border-[#1fe482] no-underline duration-[0.3s] hover:text-[#1fe482] before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[#fff] before:rounded-full before:scale-0 before:duration-[0.3s] before:z-[-1] hover:before:scale-100 z-0"
-                    >
-                      <FontAwesomeIcon icon={faInstagram} />
-                    </a>
-                  </li>
-                  <li className="inline-block mx-[5px] ">
-                    <a
-                      href="#00"
-                      className="relative block w-[45px] h-[45px] text-[#dbe3e3] text-[22px] leading-[45px] rounded-full border-[1px] border-solid border-[#1fe482] no-underline duration-[0.3s] hover:text-[#1fe482] before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[#fff] before:rounded-full before:scale-0 before:duration-[0.3s] before:z-[-1] hover:before:scale-100 z-0"
-                    >
-                      <FontAwesomeIcon icon={faBehance} />
-                    </a>
-                  </li>
-                </ul>
-                <p className="text-[#fff]">
-                  CopyRight © 2023 All Rights Reserved
-                </p>
-              </div>{" "}
-              {/* END COL */}
-            </div>{" "}
-            {/*- END ROW */}
-          </div>{" "}
-          {/*- END CONTAINER */}
-        </footer>
+        <Footer
+          className="bg-[url('/images/index-footer-bg.svg')]"
+          linkClassName="after:bg-[#fff] text-[#fff]"
+          socialItemClassName="text-[#fff] border-[#fff] hover:text-[#fff] hover:before:bg-[#000]"
+          coppyRightClassName= 'text-[#fff]'
+        />
       </main>
     </>
   );

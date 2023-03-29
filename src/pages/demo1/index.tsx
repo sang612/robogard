@@ -14,6 +14,8 @@ import { Blogs } from "@/components/Blogs";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Solutions } from "@/components/Solutions";
+import "wowjs/css/libs/animate.css";
+import { useScrollspy } from "@/hook/useCrollspy";
 
 config.autoAddCss = false;
 const itemList = [
@@ -134,48 +136,58 @@ const listSolution = [
     id: 1,
     text: "Fully Reponsive",
     imgSrc: "/images/elements/feat1.png",
-    className: 'border-b-[#00B0FE]'
+    className: "border-b-[#00B0FE]",
   },
   {
     id: 2,
     text: "Awards Win",
     imgSrc: "/images/elements/feat2.png",
-    className: 'border-b-[#00B0FE]'
+    className: "border-b-[#00B0FE]",
   },
   {
     id: 3,
     text: "24/7 Support",
     imgSrc: "/images/elements/feat3.png",
-    className: 'border-b-[#00B0FE]'
+    className: "border-b-[#00B0FE]",
   },
   {
     id: 4,
     text: "Happy Clients",
     imgSrc: "/images/elements/feat1.png",
-    className: 'border-b-[#00B0FE]'
+    className: "border-b-[#00B0FE]",
   },
   {
     id: 5,
     text: "Fully Responsive",
     imgSrc: "/images/elements/feat4.png",
-    className: 'border-b-[#00B0FE]'
+    className: "border-b-[#00B0FE]",
   },
 ];
 
 export default function Home() {
+  if (typeof window !== "undefined") {
+    const WOW = require("wowjs");
+    new WOW.WOW({
+      live: false,
+    }).init();
+  }
+
+  const ids = ["home", "about", "service", "work", "resume", "blog", "contact"];
+  const activeId = useScrollspy(ids, 91.95);
+
   return (
     <>
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
-        <Navbar />
+        <Navbar activeId={activeId} />
         <Banner
           className={`bg-[url('/images/header-bg/header-4.svg')]`}
           title="Get Ready! AI Soluation to Improve Business Growth"
           title2="AI Solutions to more Business profit in"
           desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut culpa nulla ipsum amet a ab neque. Odio impedit inventore nemo aliquid eius ad? Veniam perferendis iste odio officiis."
-          animationTextColor='text-[#72FBFD]'
+          animationTextColor="text-[#72FBFD]"
         />
         <CounterSection itemList={itemList} />
-        <AboutBanner />
+        <AboutBanner beforeColor="before:bg-[#00B0FE]" titleColor="text-[#00B0FE]" title2Color="text-[#fff]" firstColor="#C5FFEA" secondColor="#00FFFF" borderButtonColor="border-[#fff]" textButtonColor="text-[#fff]"/>
         <section className="pb-[70px]" id="demo">
           <div className="container mx-auto px-[15px] xl:w-[1170px]">
             <HeadTitle
@@ -201,7 +213,10 @@ export default function Home() {
         </section>
         <AboutUs />
 
-        <section className="relative pb-[70px] pt-[100px] bg-[url(/images/header-bg/serv-bg.svg)] bg-cover">
+        <section
+          id="service"
+          className="relative pb-[70px] pt-[100px] bg-[url(/images/header-bg/serv-bg.svg)] bg-cover"
+        >
           <div className="relative mx-auto xl:w-[1170px]">
             <HeadTitle
               title="Our Main Services"
@@ -216,7 +231,11 @@ export default function Home() {
         <WhatClientsSaying />
         <Blogs listBlogItem={listBlogItem} />
         <ContactForm />
-        <Footer className="bg-[url('/images/demo1-footer-bg.svg')]" linkClassName="after:bg-[#00FFFF] text-[#fff]" socialItemClassName="text-[#00FFFF] border-[#00FFFF] hover:text-[#00FFFF]"/>
+        <Footer
+          className="bg-[url('/images/demo1-footer-bg.svg')]"
+          linkClassName="after:bg-[#00FFFF] text-[#fff]"
+          socialItemClassName="text-[#00FFFF] border-[#00FFFF] hover:text-[#00FFFF]"
+        />
       </main>
     </>
   );

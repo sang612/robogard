@@ -15,6 +15,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Solutions } from "@/components/Solutions";
+import "wowjs/css/libs/animate.css";
+import { useScrollspy } from "@/hook/useCrollspy";
 
 config.autoAddCss = false;
 const itemList = [
@@ -182,10 +184,19 @@ const listSolution = [
 ];
 
 export default function Home() {
+  if (typeof window !== "undefined") {
+    const WOW = require("wowjs");
+    new WOW.WOW({
+      live: false,
+    }).init();
+  }
+  const ids = ["home", "about", "service", "work", "resume", "blog", "contact"];
+  const activeId = useScrollspy(ids, 91.95);
+  
   return (
     <>
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
-        <Navbar />
+        <Navbar activeId={activeId}/>
         <Banner
           className={`bg-[url('/images/demo3/demo3-header-bg.svg')]`}
           title="Automated Chatbot to grow Business!"
@@ -252,7 +263,7 @@ export default function Home() {
             <Solutions listSolution={listSolution} />
           </div>
         </section>
-        <section className="relative pb-[70px] pt-[100px] bg-[url(/images/demo4/demo4-our-main-services.svg)] bg-cover">
+        <section id="service" className="relative pb-[70px] pt-[100px] bg-[url(/images/demo4/demo4-our-main-services.svg)] bg-cover">
           <div className="relative mx-auto xl:w-[1170px]">
             <HeadTitle
               title="Our Main Services"

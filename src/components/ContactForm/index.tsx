@@ -10,7 +10,7 @@ export const ContactForm = ({
   buttonClassName = 'border-[#000] text-[#000]'
 }) => {
   return (
-    <section className="relative py-[100px] px-0">
+    <section className="relative py-[100px] px-0" id="contact">
       <div className="container mx-auto px-[15px]">
         <div className="mx-[-15px]">
           <div className="md:w-1/5 pr-4 pl-4">

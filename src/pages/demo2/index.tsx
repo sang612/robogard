@@ -14,6 +14,8 @@ import { Blogs } from "@/components/Blogs";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import "wowjs/css/libs/animate.css";
+import { useScrollspy } from "@/hook/useCrollspy";
 
 config.autoAddCss = false;
 const itemList = [
@@ -118,7 +120,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#6F45EE]",
     iconColor: "#6F45EE",
-    buttonClassName: 'text-[#000] border-[#000]'
+    buttonClassName: "text-[#000] border-[#000]",
   },
   {
     id: 2,
@@ -128,7 +130,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#6F45EE]",
     iconColor: "#6F45EE",
-    buttonClassName: 'text-[#000] border-[#000]'
+    buttonClassName: "text-[#000] border-[#000]",
   },
   {
     id: 3,
@@ -138,15 +140,24 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#6F45EE]",
     iconColor: "#6F45EE",
-    buttonClassName: 'text-[#000] border-[#000]'
+    buttonClassName: "text-[#000] border-[#000]",
   },
 ];
 
 export default function Home() {
+  if (typeof window !== "undefined") {
+    const WOW = require("wowjs");
+    new WOW.WOW({
+      live: false,
+    }).init();
+  }
+  const ids = ["home", "about", "service", "work", "resume", "blog", "contact"];
+  const activeId = useScrollspy(ids, 91.95);
+
   return (
     <>
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
-        <Navbar />
+        <Navbar activeId={activeId} />
         <Banner
           className={`bg-[url('/images/header-bg/demo2-header-bg.svg')]`}
           title="Automated Chatbot to grow Business!"
@@ -198,7 +209,7 @@ export default function Home() {
           beforeColor="before:bg-[#6F45EE]"
           titleColor="text-[#6F45EE]"
         />
-        <section className="relative pb-[70px] pt-[100px] bg-[url(/images/header-bg/demo2-our-main-services.svg)] bg-cover">
+        <section id="service" className="relative pb-[70px] pt-[100px] bg-[url(/images/header-bg/demo2-our-main-services.svg)] bg-cover">
           <div className="relative mx-auto xl:w-[1170px]">
             <HeadTitle
               title="Our Main Services"
@@ -215,8 +226,18 @@ export default function Home() {
         </section>
         <WhatClientsSaying dotSliderColor="bg-[#6F45EE]" />
         <Blogs listBlogItem={listBlogItem} />
-        <ContactForm imgSrc="/images/demo2_contact-form.svg" squareClassName="before:bg-[url('/images/square-purple.svg')]" titleColor="text-[#6F45EE]" inputClassName="bg-[#F4F0FF]" textareaClassName="bg-[#F4F0FF]"/>
-        <Footer className="bg-[url('/images/demo2_footer-bg.svg')]" linkClassName="after:bg-[#fff] text-[#fff]" socialItemClassName="text-[#fff] border-[#fff] hover:text-[#6F45EE]"/>
+        <ContactForm
+          imgSrc="/images/demo2_contact-form.svg"
+          squareClassName="before:bg-[url('/images/square-purple.svg')]"
+          titleColor="text-[#6F45EE]"
+          inputClassName="bg-[#F4F0FF]"
+          textareaClassName="bg-[#F4F0FF]"
+        />
+        <Footer
+          className="bg-[url('/images/demo2_footer-bg.svg')]"
+          linkClassName="after:bg-[#fff] text-[#fff]"
+          socialItemClassName="text-[#fff] border-[#fff] hover:text-[#6F45EE]"
+        />
       </main>
     </>
   );
