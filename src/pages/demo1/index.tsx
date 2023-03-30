@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Navbar } from "../../components/Navbar";
@@ -16,6 +15,9 @@ import { Footer } from "@/components/Footer";
 import { Solutions } from "@/components/Solutions";
 import "wowjs/css/libs/animate.css";
 import { useScrollspy } from "@/hook/useCrollspy";
+import { ScrollButton } from "@/components/ScrollButton";
+import { PreLoader } from "@/components/Preloader";
+import { useEffect, useState } from "react";
 
 config.autoAddCss = false;
 const itemList = [
@@ -71,6 +73,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv1.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "Business Consulting",
@@ -78,6 +81,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv2.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "AI-Based Investments",
@@ -85,6 +89,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv3.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "System Automation",
@@ -92,6 +97,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv4.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "Targeted AI Merketing",
@@ -99,6 +105,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv5.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "Mobile Security",
@@ -106,6 +113,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv6.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
 ];
 const listBlogItem = [
@@ -115,6 +123,7 @@ const listBlogItem = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat",
     imageUrl: "images/blog/1.svg",
     type: "Lifestyle",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     id: 2,
@@ -122,6 +131,7 @@ const listBlogItem = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat",
     imageUrl: "images/blog/2.svg",
     type: "Lifestyle",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     id: 3,
@@ -129,6 +139,7 @@ const listBlogItem = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat",
     imageUrl: "images/blog/3.svg",
     type: "Lifestyle",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
 ];
 const listSolution = [
@@ -174,6 +185,16 @@ export default function Home() {
 
   const ids = ["home", "about", "service", "work", "resume", "blog", "contact"];
   const activeId = useScrollspy(ids, 91.95);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timerId);
+  }, []);
+  if (loading) {
+    return <PreLoader loading={loading} />;
+  }
 
   return (
     <>
@@ -187,7 +208,16 @@ export default function Home() {
           animationTextColor="text-[#72FBFD]"
         />
         <CounterSection itemList={itemList} />
-        <AboutBanner beforeColor="before:bg-[#00B0FE]" titleColor="text-[#00B0FE]" title2Color="text-[#fff]" firstColor="#C5FFEA" secondColor="#00FFFF" borderButtonColor="border-[#fff]" textButtonColor="text-[#fff]"/>
+        <AboutBanner
+          beforeColor="before:bg-[#00B0FE]"
+          titleColor="text-[#00B0FE]"
+          title2Color="text-[#fff]"
+          firstColor="#C5FFEA"
+          secondColor="#00FFFF"
+          borderButtonColor="border-[#fff]"
+          textButtonColor="text-[#fff]"
+          buttonClassName="hover:text-[#00B0FE]"
+        />
         <section className="pb-[70px]" id="demo">
           <div className="container mx-auto px-[15px] xl:w-[1170px]">
             <HeadTitle
@@ -230,12 +260,13 @@ export default function Home() {
         </section>
         <WhatClientsSaying />
         <Blogs listBlogItem={listBlogItem} />
-        <ContactForm />
+        <ContactForm buttonClassName="border-[#000] text-[#000] hover:text-[#5a5a5a]" />
         <Footer
           className="bg-[url('/images/demo1-footer-bg.svg')]"
-          linkClassName="after:bg-[#00FFFF] text-[#fff]"
+          linkClassName="after:bg-[#00FFFF] text-[#fff] hover:text-[#dbe3e3]"
           socialItemClassName="text-[#00FFFF] border-[#00FFFF] hover:text-[#00FFFF]"
         />
+        <ScrollButton />
       </main>
     </>
   );

@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Navbar } from "../../components/Navbar";
@@ -16,6 +15,9 @@ import { Footer } from "@/components/Footer";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import "wowjs/css/libs/animate.css";
 import { useScrollspy } from "@/hook/useCrollspy";
+import { ScrollButton } from "@/components/ScrollButton";
+import { useEffect, useState } from "react";
+import { PreLoader } from "@/components/Preloader";
 
 config.autoAddCss = false;
 const itemList = [
@@ -74,6 +76,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv1.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "Business Consulting",
@@ -81,6 +84,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv2.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "AI-Based Investments",
@@ -88,6 +92,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv3.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "System Automation",
@@ -95,6 +100,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv4.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "Targeted AI Merketing",
@@ -102,6 +108,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv5.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
   {
     title: "Mobile Security",
@@ -109,6 +116,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv6.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
+    buttonClassName: "border-[#000] text-[#000] hover:text-[#5a5a5a]",
   },
 ];
 const listBlogItem = [
@@ -120,7 +128,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#FFC90B]",
     iconColor: "#FFC90B",
-    buttonClassName: "text-[#000] border-[#000]",
+    buttonClassName: "text-[#000] border-[#000] hover:text-[#5a5a5a]",
   },
   {
     id: 2,
@@ -130,7 +138,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#FFC90B]",
     iconColor: "#FFC90B",
-    buttonClassName: "text-[#000] border-[#000]",
+    buttonClassName: "text-[#000] border-[#000] hover:text-[#5a5a5a]",
   },
   {
     id: 3,
@@ -140,7 +148,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#FFC90B]",
     iconColor: "#FFC90B",
-    buttonClassName: "text-[#000] border-[#000]",
+    buttonClassName: "text-[#000] border-[#000] hover:text-[#5a5a5a]",
   },
 ];
 
@@ -153,11 +161,21 @@ export default function Home() {
   }
   const ids = ["home", "about", "service", "work", "resume", "blog", "contact"];
   const activeId = useScrollspy(ids, 91.95);
-  
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timerId);
+  }, []);
+  if (loading) {
+    return <PreLoader loading={loading} />;
+  }
+
   return (
     <>
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
-        <Navbar activeId={activeId}/>
+        <Navbar activeId={activeId} />
         <Banner
           className={`bg-[url('/images/demo3/demo3-header-bg.svg')]`}
           title="Automated Chatbot to grow Business!"
@@ -194,7 +212,7 @@ export default function Home() {
           beforeColor="before:bg-[#FFC90B]"
           titleColor="text-[#FFC90B]"
         />
-         <AboutBanner
+        <AboutBanner
           imageUrl="images/demo3/demo3-about.svg"
           titleColor="text-[#FFC90B]"
           beforeColor="before:bg-[#FFC90B]"
@@ -206,10 +224,13 @@ export default function Home() {
           secondColor="#FFC90B"
           textButtonColor="text-[#000]"
           borderButtonColor="border-[#fff]"
-          buttonClassName="bg-[#fff]"
+          buttonClassName="bg-[#fff] hover:text-[#FFC90B]"
           squareClassName="before:bg-[url('/images/demo3/square-grey.svg')]"
         />
-        <section id="service" className="relative pb-[70px] pt-[100px] bg-[url(/images/demo3/demo3-our-main-services.svg)] bg-cover">
+        <section
+          id="service"
+          className="relative pb-[70px] pt-[100px] bg-[url(/images/demo3/demo3-our-main-services.svg)] bg-cover"
+        >
           <div className="relative mx-auto xl:w-[1170px]">
             <HeadTitle
               title="Our Main Services"
@@ -232,8 +253,14 @@ export default function Home() {
           titleColor="text-[#FFC90B]"
           inputClassName="bg-[#F4F4F4]"
           textareaClassName="bg-[#F4F4F4]"
+          buttonClassName="border-[#000] text-[#000] hover:text-[#5a5a5a]"
         />
-        <Footer className="bg-[url('/images/demo3/demo-3-footer-bg.svg')]" linkClassName="after:bg-[#FFC90B] text-[#fff]" socialItemClassName="text-[#FFC90B] border-[#FFC90B] hover:text-[#FFC90B]"/>
+        <Footer
+          className="bg-[url('/images/demo3/demo-3-footer-bg.svg')]"
+          linkClassName="after:bg-[#FFC90B] text-[#fff] hover:text-[#dbe3e3]"
+          socialItemClassName="text-[#FFC90B] border-[#FFC90B] hover:text-[#FFC90B]"
+        />
+        <ScrollButton />
       </main>
     </>
   );

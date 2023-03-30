@@ -1,10 +1,4 @@
-interface HeadTitle {
-  title: string;
-  desc: string;
-  titleColor?: string;
-  descColor?: string;
-  separateColor?: string;
-}
+import { HeadTitleProps } from "@/type";
 
 export const HeadTitle = ({
   title,
@@ -12,7 +6,7 @@ export const HeadTitle = ({
   titleColor,
   descColor,
   separateColor,
-}: HeadTitle) => {
+}: HeadTitleProps) => {
   return (
     <div
       className={`section_heading pb-[100px] text-center after:absolute after:content-[''] after:blocl after:h-[30px] after:w-[3px] after:left-[50%] ${

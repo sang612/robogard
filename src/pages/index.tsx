@@ -1,38 +1,31 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config, findIconDefinition } from "@fortawesome/fontawesome-svg-core";
-import {
-  faFacebookF,
-  faTwitter,
-  faLinkedinIn,
-  faInstagram,
-  faBehance,
-} from "@fortawesome/free-brands-svg-icons";
-import { faAnglesDown, faBars } from "@fortawesome/free-solid-svg-icons";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import { useEffect, useState } from "react";
 import { Banner } from "@/components/Banner";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
+import { ScrollButton } from "@/components/ScrollButton";
+import { PreLoader } from "@/components/Preloader";
+import { HomeNavbar } from "../components/Navbar/HomeNavbar";
+import { useScrollspy } from "@/hook/useCrollspy";
 
 config.autoAddCss = false;
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const [colorChange, setColorchange] = useState(false);
+  const ids = ["home", "demo"];
+  const activeId = useScrollspy(ids, 91.95);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const changeNavbarColor = () => {
-      if (window.scrollY >= 80) {
-        setColorchange(true);
-      } else {
-        setColorchange(false);
-      }
-    };
-    window.addEventListener("scroll", changeNavbarColor);
+    const timerId = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timerId);
   }, []);
+  if (loading) {
+    return <PreLoader loading={loading} />;
+  }
 
   return (
     <>
@@ -43,56 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
-        <nav
-          className={`fixed w-full py-[20px] top-0 right-0 left-0 z-[1030] flex flex-wrap items-center justify-between ${
-            colorChange ? "bg-[#0C0872]" : "lg:bg-[#00000000]"
-          } bg-[#0C0872] transition-all duration-[1s] ease-in-out`}
-        >
-          <div className="container mx-auto flex flex-wrap items-center justify-between  px-[30px] ">
-            <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-              <a
-                className="text-[#fff] text-[22px] leading-[50px] h-[50px]  font-bold  inline-block mr-4 py-2 whitespace-nowrap  "
-                href="#pablo"
-              >
-                RoboGard
-              </a>
-              <button
-                className="text-[#fff] cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                type="button"
-                onClick={() => setNavbarOpen(!navbarOpen)}
-              >
-                <FontAwesomeIcon icon={faBars} />
-              </button>
-            </div>
-            <div
-              className={
-                "lg:flex flex-grow items-center justify-center" +
-                (navbarOpen ? " flex" : " hidden")
-              }
-              id="example-navbar-danger"
-            >
-              <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                <li className="nav-item">
-                  <a
-                    className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#00ffff] after:text-[#00ffff]  px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                    href="#pablo"
-                  >
-                    <span className="ml-2">Home</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="before:opacity-0 before:translate-x-[20px] hover:before:opacity-100 hover:before:translate-x-0 hover:before:translate-y-0 before:mr-[8px] before:content-['['] before:inline-block before:transition-all after:opacity-0 after:translate-x-[-20px]  hover:after:opacity-100 hover:after:translate-x-0 after:translate-y-0 after:ml-[8px] after:content-[']'] after:inline-block after:transition-all duration-[0.3s] ease-in-out before:text-[#00ffff] after:text-[#00ffff] px-[5px] py-[15px] flex items-center text-[16px] capitalize  font-[500] leading-snug text-[#fff] hover:opacity-75"
-                    href="#pablo"
-                  >
-                    <span className="ml-2">Demos</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
+        <HomeNavbar activeId={activeId} />
         <Banner
           className={`bg-[url('/images/index-header-bg.svg')]`}
           title="HLS AI Startup & Chabot Template"
@@ -104,8 +48,7 @@ export default function Home() {
           buttonClassName="text-[#000] bg-[#fff]"
           animationTextColor="text-[#00FFFF]"
         />
-
-        <section className="pt-[100px] pb-[70px] " id="about">
+        <section className="pt-[100px] pb-[70px] " id="demo">
           <div className="container mx-auto px-[15px]">
             <div className="section_heading pb-[100px] text-center after:absolute after:content-[''] after:blocl after:h-[30px] after:w-[3px] after:left-[50%] after:bg-[#000] after:-translate-x-1/2">
               <h2 className="text-[40px] font-[600] text-[#000] mb-[10px]">
@@ -176,10 +119,11 @@ export default function Home() {
         </section>
         <Footer
           className="bg-[url('/images/index-footer-bg.svg')]"
-          linkClassName="after:bg-[#fff] text-[#fff]"
+          linkClassName="after:bg-[#fff] text-[#fff] hover:text-[#dbe3e3]"
           socialItemClassName="text-[#fff] border-[#fff] hover:text-[#fff] hover:before:bg-[#000]"
-          coppyRightClassName= 'text-[#fff]'
+          coppyRightClassName="text-[#fff]"
         />
+        <ScrollButton />
       </main>
     </>
   );
