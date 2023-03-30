@@ -16,6 +16,9 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Solutions } from "@/components/Solutions";
 import "wowjs/css/libs/animate.css";
 import { useScrollspy } from "@/hook/useCrollspy";
+import { ScrollButton } from "@/components/ScrollButton";
+import { useEffect, useState } from "react";
+import { PreLoader } from "@/components/Preloader";
 
 config.autoAddCss = false;
 const itemList = [
@@ -74,7 +77,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv1.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
-    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9] hover:text-[#000]",
   },
   {
     title: "Business Consulting",
@@ -82,7 +85,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv2.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
-    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9] hover:text-[#000]",
   },
   {
     title: "AI-Based Investments",
@@ -90,7 +93,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv3.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
-    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9] hover:text-[#000]",
   },
   {
     title: "System Automation",
@@ -98,7 +101,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv4.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
-    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9] hover:text-[#000]",
   },
   {
     title: "Targeted AI Merketing",
@@ -106,7 +109,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv5.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
-    buttonClassName: "border-[#68A0E9] text-[#68A0E9]",
+    buttonClassName: "border-[#68A0E9] text-[#68A0E9] hover:text-[#000]",
   },
   {
     title: "Mobile Security",
@@ -114,7 +117,7 @@ const listOurMainServices = [
     iconUrl: "/images/elements/serv6.png",
     buttonText: "Learn More",
     className: "md:w-full sm:w-full",
-    buttonClassname: "border-[#68A0E9] text-[#68A0E9]",
+    buttonClassname: "border-[#68A0E9] text-[#68A0E9] hover:text-[#000]",
   },
 ];
 const listBlogItem = [
@@ -126,7 +129,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#68A0E9]",
     iconColor: "#68A0E9",
-    buttonClassName: "text-[#68A0E9] border-[#68A0E9]",
+    buttonClassName: "text-[#68A0E9] border-[#68A0E9] hover:text-[#000]",
   },
   {
     id: 2,
@@ -136,7 +139,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#68A0E9]",
     iconColor: "#68A0E9",
-    buttonClassName: "text-[#68A0E9] border-[#68A0E9]",
+    buttonClassName: "text-[#68A0E9] border-[#68A0E9] hover:text-[#000]",
   },
   {
     id: 3,
@@ -146,7 +149,7 @@ const listBlogItem = [
     type: "Lifestyle",
     textColor: "text-[#68A0E9]",
     iconColor: "#68A0E9",
-    buttonClassName: "text-[#68A0E9] border-[#68A0E9]",
+    buttonClassName: "text-[#68A0E9] border-[#68A0E9] hover:text-[#000]",
   },
 ];
 const listSolution = [
@@ -191,6 +194,16 @@ export default function Home() {
   }
   const ids = ["home", "about", "service", "work", "resume", "blog", "contact"];
   const activeId = useScrollspy(ids, 91.95);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timerId);
+  }, []);
+  if (loading) {
+    return <PreLoader loading={loading} />;
+  }
 
   return (
     <>
@@ -230,7 +243,7 @@ export default function Home() {
           secondColor="#68A0E9"
           textButtonColor="text-[#000]"
           borderButtonColor="border-[#fff]"
-          buttonClassName="bg-[#fff]"
+          buttonClassName="bg-[#fff] hover:text-[#68A0E9]"
           squareClassName="before:bg-[url('/images/demo3/square-grey.svg')]"
         />
         <section className="relative pb-[70px] pt-[100px] before:content-[''] before:left-0 before:top-0 before:absolute before:w-full before:h-[70%] before:bg-[url(/images/demo5/demo5-how-it-works-bg.svg)] before:bg-no-repeat before:bg-[bottom_center]">
@@ -285,14 +298,15 @@ export default function Home() {
           titleColor="text-[#68A0E9]"
           inputClassName="bg-[#F2FBFF]"
           textareaClassName="bg-[#F2FBFF]"
-          buttonClassName="border-[#68A0E9] text-[#68A0E9]"
+          buttonClassName="border-[#68A0E9] text-[#68A0E9] hover:text-[#000]"
         />
         <Footer
           className="bg-[url('/images/demo5/demo-5-footer-bg.svg')]"
-          linkClassName="after:bg-[#68A0E9] text-[#000]"
+          linkClassName="after:bg-[#68A0E9] text-[#000] hover:text-[#5d5d5d]"
           socialItemClassName="text-[#68A0E9] border-[#68A0E9] hover:text-[#68A0E9]"
           coppyRightClassName="text-[#000]"
         />
+        <ScrollButton />
       </main>
     </>
   );

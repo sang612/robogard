@@ -80,3 +80,13 @@ export interface SolutionItemType {
 export interface SolutionProp {
   listSolution: SolutionItemType[];
 }
+export interface PreLoaderProps {
+  loading: boolean;
+}
+export interface HeadTitleProps {
+  title: string;
+  desc: string;
+  titleColor?: string;
+  descColor?: string;
+  separateColor?: string;
+}
