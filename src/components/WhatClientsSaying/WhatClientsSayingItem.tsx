@@ -9,7 +9,7 @@ export const WhatClientsSayingItem = ({
 }: WhatClientsSayingItemType) => {
   return (
     <div className="mx-[50px] text-center relative">
-      <p className="md:px-[145px] mb-[30px] italic bg-transparent leading-[30px] relative before:bg-[url('/images/elements/nhay.svg')] before:bg-contain before:bg-no-repeat before:bg-center before:w-[45px] before:h-[45px] before:content-[''] before:absolute before:left-[90px]">
+      <p className="md:px-[145px] mb-[30px] italic bg-transparent leading-[30px] relative before:bg-[url('/images/elements/nhay.svg')] before:bg-contain before:bg-no-repeat before:bg-center before:w-[45px] before:h-[45px] before:content-[''] before:absolute lg:before:left-[90px] before:left-[-45px]">
         {comment}
       </p>
       <div className="relative inline-block w-[100px] h-[100px] p-[5px] rounded-full bg-[#ffffffcc] mb-[15px]">
