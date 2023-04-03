@@ -40,7 +40,7 @@ export const WhatClientsSaying = ({ dotSliderColor = "bg-[#1fe482]" }) => {
   return (
     <section
       id="testimonial_area"
-      className="bg-[url('/images/test-bg.svg')] bg-cover relative py-[100px] bg-no-repeat"
+      className="lg:bg-[url('/images/test-bg.svg')] bg-none bg-cover relative py-[100px] bg-no-repeat "
     >
       <div className="absolute z-[-1] w-[48%] h-full left-1/2 -translate-x-1/2 top-[70px] bg-[url('/images/elements/testimonial-bg.svg')] bg-no-repeat bg-[center_center] bg-contain" />
       <div className="mx-auto px-[15px] xl:w-[1170px]">

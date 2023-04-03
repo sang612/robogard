@@ -97,7 +97,7 @@ export const ContactForm = ({
                                 value="Send Your Message"
                                 name="submit"
                                 id="submitButton"
-                                className={`whitespace-nowrap w-1/2 bg-transparent border-[1px] border-solid  py-[15px] px-[50px] font-[600] mt-[29px] rounded-[30px] ${buttonClassName}`}
+                                className={`w-full lg:w-1/2 bg-transparent border-[1px] border-solid  py-[15px] px-[50px] font-[600] mt-[29px] rounded-[30px] ${buttonClassName}`}
                                 title="Click here to submit your message!"
                               >
                                 Send Your Message
