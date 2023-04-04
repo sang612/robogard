@@ -42,6 +42,7 @@ export const WhyChooseUs = ({
                         width={99}
                         height={99}
                         alt="i1"
+                        className="w-[99px] h-[99px]"
                       />
                     </div>
                     <div className="pl-[120px] ">
@@ -71,6 +72,7 @@ export const WhyChooseUs = ({
                         width={99}
                         height={99}
                         alt="i1"
+                        className="w-[99px] h-[99px]"
                       />
                     </div>
                     <div className="pl-[120px] ">
@@ -100,6 +102,7 @@ export const WhyChooseUs = ({
                         width={99}
                         height={99}
                         alt="i1"
+                        className="w-[99px] h-[99px]"
                       />
                     </div>
                     <div className="pl-[120px] ">

@@ -9,10 +9,14 @@ export const SmallSectionItem = ({
   buttonText,
   borderBColor = "border-b-[#6EFFCB]",
   className,
-  buttonClassName = 'border-[#000] text-[#000]'
+  buttonClassName = "border-[#000] text-[#000]",
+  delay,
 }: SmallSectionItemType) => {
   return (
-    <div className={`md:w-1/3 pr-4 pl-4 sm:w-1/2 ${className}`}>
+    <div
+      className={`md:w-1/3 pr-4 pl-4 sm:w-1/2 wow fadeInLeft ${className}`}
+      data-wow-delay={delay}
+    >
       <div
         className={`p-[30px_15px] hover:shadow-[0px_-1px_30px_#0000001a] border-[1px] border-solid border-[#eee] mt-0 bg-[#fff] relative mb-[30px] border-b-[3px] border-b-solid ${borderBColor} text-center`}
       >
@@ -20,7 +24,7 @@ export const SmallSectionItem = ({
           src={iconUrl}
           width={93}
           height={104}
-          className="mx-auto"
+          className="mx-auto w-[93px] h-[104px]"
           alt={title}
         />
         <h4 className="text-[22px] mt-[30px] capitalize text-[#000] font-[500]">

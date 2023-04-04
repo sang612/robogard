@@ -210,7 +210,7 @@ export default function Home() {
       <main className="text-[#666] text-[15px] leading-[1.8] font-[300] tracking-[0.5px]">
         <Navbar activeId={activeId}/>
         <Banner
-          className={`bg-[url('/images/demo3/demo3-header-bg.svg')]`}
+          className={`bg-[url('/images/demo4/demo4-header-bg.svg')]`}
           title="Automated Chatbot to grow Business!"
           title2="Get Closer look how Business Develop in"
           desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut culpa nulla ipsum amet a ab neque. Odio impedit inventore nemo aliquid eius ad? Veniam perferendis iste odio officiis."

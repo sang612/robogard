@@ -21,6 +21,9 @@ export const OutMainServicesSlider = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const settings = {
     dots: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -39,20 +42,27 @@ export const OutMainServicesSlider = ({
       },
     ],
   };
+  let delay = 0.2;
 
   return (
     <Slider {...settings}>
-      {listOurMainServices.map((item: SmallSectionItemType) => (
-        <SmallSectionItem
-          key={item.title}
-          title={item.title}
-          desc={item.desc}
-          iconUrl={item.iconUrl}
-          buttonText={item.buttonText}
-          className={item.className}
-          buttonClassName={item.buttonClassName}
-        />
-      ))}
+      {listOurMainServices.map((item: SmallSectionItemType) => {
+        const itemDelay = `${delay}s`;
+        delay += 0.2;
+
+        return (
+          <SmallSectionItem
+            key={item.title}
+            title={item.title}
+            desc={item.desc}
+            iconUrl={item.iconUrl}
+            buttonText={item.buttonText}
+            className={item.className}
+            buttonClassName={item.buttonClassName}
+            delay={itemDelay}
+          />
+        );
+      })}
     </Slider>
   );
 };

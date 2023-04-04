@@ -17,10 +17,10 @@ export const ContactForm = ({
               className={`relative md:before:block before:hidden before:content-[''] before:absolute before:w-[400px] before:h-[400px] before:left-0 before:top-[-90px] before:bg-['center_center'] before:bg-contain before:bg-no-repeat ${squareClassName}`}
             />
           </div>
-          <div className="shadow-[0px_-1px_30px_#0000001a] mx-auto overflow-hidden block bg-[#fff] md:w-4/5 pr-4 pl-4">
+          <div className="shadow-[0px_-1px_30px_#0000001a] mx-auto overflow-visible block bg-[#fff] md:w-4/5 pr-4 pl-4">
             <div className="mx-[-15px] flex flex-wrap items-center">
               <div className="md:w-1/2 pr-4 pl-0 sm:w-full h-full">
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full hover:scale-110 z-10 transition-all duration-300">
                   <Image
                     src={imgSrc}
                     alt="about-img"

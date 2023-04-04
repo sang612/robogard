@@ -22,10 +22,15 @@ export const WhatClientsSayingSlider = ({
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    cssEase: "linear",
+    overflow: "hidden",
     customPaging: customPaging,
     afterChange: (index: number) => {
       setActiveIndex(index);
@@ -33,7 +38,7 @@ export const WhatClientsSayingSlider = ({
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="wow fadeInLeft my-slider">
       {listWhatClientsSaying.map((item: WhatClientsSayingItemType) => (
         <WhatClientsSayingItem
           comment={item.comment}

@@ -21,20 +21,25 @@ export const AboutBanner = ({
       <div className="container mx-auto px-[15px]">
         <div className="mx-[-15px]">
           <div className="md:w-1/5 pr-4 pl-4">
-            <div className={`relative before:hidden md:before:block before:content-[''] before:bg-no-repeat before:absolute before:w-[400px] before:h-[400px] before:left-0 before:top-[-90px] before:bg-['center_center'] before:bg-contain ${squareClassName}`} />
+            <div
+              className={`relative before:hidden md:before:block before:content-[''] before:bg-no-repeat before:absolute before:w-[400px] before:h-[400px] before:left-0 before:top-[-90px] before:bg-['center_center'] before:bg-contain ${squareClassName}`}
+            />
           </div>
           <div
-            className={`shadow-[0px_-1px_30px_#0000001a] mx-auto overflow-hidden block ${bgColor} md:w-4/5 pr-4 pl-4`}
+            className={`shadow-[0px_-1px_30px_#0000001a] mx-auto block ${bgColor} md:w-4/5 pr-4 pl-4 overflow-visible`}
           >
             <div className="mx-[-15px] flex items-center">
               <div className="md:w-1/2 pr-4 pl-0 sm:w-full h-full">
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full hover:scale-110 z-10 transition-all duration-300">
                   <Image
                     src={imageUrl}
                     alt="about-img"
                     width={360}
                     height={160}
-                    style={{ height: "100%", width: "100%" }}
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                    }}
                   />
                 </div>
               </div>

@@ -13,12 +13,12 @@ export const AboutUs = ({
         <div className="mx-[-15px] flex relative items-center flex-wrap">
           <div className="mx-[-15px] flex">
             <div
-              className="shadow-[0px_-1px_30px_#0000001a] relative overflow-hidden block md:w-4/5 pr-4 pl-4 "
+              className="shadow-[0px_-1px_30px_#0000001a] relative overflow-visible block md:w-4/5 pr-4 pl-4 "
               style={{ background: "#fff" }}
             >
               <div className="mx-[-15px] flex items-center">
                 <div className="md:w-2/5 pr-4 pl-4 sm:w-full">
-                  <div className="relative h-[650px]">
+                  <div className="relative h-[650px] hover:scale-110 z-10 transition-all duration-300">
                     <Image src={imageSrc} alt="about-img" fill />
                   </div>
                 </div>

@@ -7,6 +7,7 @@ export interface SmallSectionItemType {
   id?: number;
   borderBColor?: string;
   buttonClassName?: string;
+  delay?: string;
 }
 
 export interface SmallSectionProps {
@@ -38,6 +39,7 @@ export interface BlogItemType {
   textColor?: string;
   iconColor?: string;
   buttonClassName?: string;
+  delay?: string;
 }
 export interface BlogProps {
   listBlogItem: BlogItemType[];
@@ -48,7 +50,7 @@ export interface CounterItemType {
   icon: string;
   number: number;
   text: string;
-  isWowAnimationCompleted?: boolean
+  isWowAnimationCompleted?: boolean;
 }
 export interface CounterProps {
   itemList: CounterItemType[];
@@ -75,6 +77,7 @@ export interface SolutionItemType {
   imgSrc: string;
   className?: string;
   id?: number;
+  delay?: string;
 }
 
 export interface SolutionProp {

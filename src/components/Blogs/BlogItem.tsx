@@ -11,9 +11,10 @@ export const BlogItem = ({
   textColor = "text-[#1fe482]",
   iconColor = "#1fe482",
   buttonClassName = "",
+  delay
 }: BlogItemType) => {
   return (
-    <div className="md:w-1/3 sm:w-1/2 pr-4 pl-4 ">
+    <div className="md:w-1/3 sm:w-1/2 pr-4 pl-4 wow fadeInLeft"  data-wow-delay={delay}>
       <div className="single_blog">
         <div className="blog-thumb">
           <div className="blog-image relative w-full h-full">
@@ -35,7 +36,7 @@ export const BlogItem = ({
                   height={14}
                   color={iconColor}
                 />
-                October 21, 2019
+                October 21, 2023
               </small>
               <span
                 className={`${textColor} text-[10px] font-bold capitalize ml-[2px] inline-block align-middle`}
